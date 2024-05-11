@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Flask Website</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        body {
+            background-color: #363632; /* Black background color */
+            margin: 0; /* Remove default margin */
+            padding: 0; /* Remove default padding */
+            font-family: Arial, sans-serif; /* Optional: Specify font family */
+        }
+
+        /* Style for section containers */
+        .section-container {
+            max-width: 1200px; /* Adjust max-width as needed */
+            margin: 0 auto; /* Center the container horizontally */
+            padding: 20px; /* Add padding to create space around content */
+            background-color: #fff; /* White background color */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Add shadow for depth */
+            border-radius: 8px; /* Add rounded corners */
+            margin-bottom: 40px; /* Add space between sections */
+        }
+
+        /* Split container styles */
+        .split-container {
+            display: flex; /* Use flexbox */
+            flex-wrap: wrap; /* Allow wrapping of flex items */
+            justify-content: space-between; /* Distribute items evenly */
+        }
+
+        /* Styles for left and right sections in split container */
+        .split-container .section-left,
+        .split-container .section-right {
+            width: calc(50% - 10px); /* Calculate width minus space between */
+            margin-right: 20px; /* Add space between sections */
+        }
+
+        /* Clearfix for split container */
+        .clearfix::after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Welcome to My Flask Website</h1>
+    </header>
+    
+    <nav>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#services">Services</a></li>
+            <!-- Add more navigation links here -->
+        </ul>
+    </nav>
+    
+    <!-- Container for Home section -->
+    <div class="section-container">
+        <section id="home">
+            <h2>Why Business Intelligence (BI)?</h2>
+            <p>
+                In today's data-driven world, Business Intelligence (BI) is the key to unlocking valuable insights from your data. With BI, you can:
+                <ul>
+                    <li>Gain Insights</li>
+                    <li>Make Informed Decisions</li>
+                    <li>Stay Competitive</li>
+                    <li>Improve Efficiency</li>
+                </ul>
+            </p>
+            
+            <!-- Add a canvas element for the line graph -->
+            <canvas id="lineChart" width="400" height="150"></canvas>
+
+            <script>
+                // Data for the line graph
+                var data = {
+                    labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun"],
+                    datasets: [{
+                        label: "Number of Users",
+                        data: [100, 150, 200, 180, 220, 250],
+                        borderColor: 'rgba(75, 192, 192, 1)',
+                        borderWidth: 2
+                    }]
+                };
+
+                // Configuration options
+                var options = {
+                    scales: {
+                        y: {
+                            beginAtZero: true
+                        }
+                    }
+                };
+
+                // Create the line graph
+                var ctx = document.getElementById('lineChart').getContext('2d');
+                var lineChart = new Chart(ctx, {
+                    type: 'line',
+                    data: data,
+                    options: options
+                });
+            </script>
+        </section>
+    </div>
+    
+    <!-- Split Container for About and Services sections -->
+    <div class="section-container split-container clearfix">
+        <div class="section-left">
+            <!-- Container for About section -->
+            <div class="section-container">
+                <section id="about">
+                    <h2>How to Implement Business Intelligence (BI)?</h2>
+                    <p>
+                        Implementing BI in your organization doesn't have to be complicated. Here's how:
+                        <ol>
+                            <li>Define Objectives</li>
+                            <li>Assess Data Sources</li>
+                            <li>Choose the Right Tools</li>
+                            <li>Data Preparation</li>
+                            <li>Build Dashboards and Reports</li>
+                            <li>Training and Adoption</li>
+                        </ol>
+                    </p>
+                </section>
+            </div>
+        </div>
+        <div class="section-right">
+            <!-- Container for Services section -->
+            <div class="section-container">
+                <section id="services">
+                    <h2>Why Choose Us for BI Consulting?</h2>
+                    <p>
+                        When it comes to BI consulting, we stand out for the following reasons:
+                        <ul>
+                            <li>Expertise</li>
+                            <li>Customized Solutions</li>
+                            <li>Proven Track Record</li>
+                            <li>Customer-Centric Approach</li>
+                            <li>Continuous Improvement</li>
+                        </ul>
+                        With our BI consulting services, you can unlock the full potential of your data and drive business growth.
+                    </p>
+                </section>
+            </div>
+        </div>
+    </div>
+
+    <!-- Container for Additional section 1 -->
+    <div class="section-container">
+        <section id="additional-section-1">
+            <h2>Additional Section 1</h2>
+            <p>This is an additional section to increase page height.</p>
+            <!-- Adding images here -->
+            <div class="image-container">
+                <img src="{{ url_for('static', filename='images/img2.jpg') }}" alt="Image 1" width="750" height="430">
+            </div> 
+        </section>
+    </div>
+    
+    <!-- Container for Additional section 2 -->
+    <div class="section-container">
+        <section id="additional-section-2">
+            <h2>Additional Section 2</h2>
+            <p>This is another additional section to increase page height.</p>
+            <!-- Adding images here -->
+            <div class="image-container">
+                <img src="{{ url_for('static', filename='images/img1.jpg') }}" alt="Image 1" width="750" height="430">
+            </div> 
+        </section>
+    </div>
+
+    <!-- Add more containers for additional sections if needed -->
+    
+    <footer>
+        <p>&copy; 2024 Data Analytics.ca</p>
+    </footer>
+</body>
+</html>
