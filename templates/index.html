@@ -28,15 +28,17 @@
         /* Split container styles */
         .split-container {
             display: flex; /* Use flexbox */
-            flex-wrap: wrap; /* Allow wrapping of flex items */
             justify-content: space-between; /* Distribute items evenly */
+            margin-bottom: 40px; /* Add space between containers */
         }
 
-        /* Styles for left and right sections in split container */
-        .split-container .section-left,
-        .split-container .section-right {
-            width: calc(50% - 10px); /* Calculate width minus space between */
-            margin-right: 20px; /* Add space between sections */
+        /* Styles for sections in split container */
+        .split-container .section {
+            width: calc(33.33% - 20px); /* Calculate width minus space between */
+            padding: 20px; /* Add padding */
+            background-color: #fff; /* White background color */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Add shadow for depth */
+            border-radius: 8px; /* Add rounded corners */
         }
 
         /* Clearfix for split container */
@@ -110,70 +112,49 @@
         </section>
     </div>
     
-    <!-- Split Container for About and Services sections -->
-    <div class="section-container split-container clearfix">
-        <div class="section-left">
-            <!-- Container for About section -->
-            <div class="section-container">
-                <section id="about">
-                    <h2>How to Implement Business Intelligence (BI)?</h2>
-                    <p>
-                        Implementing BI in your organization doesn't have to be complicated. Here's how:
-                        <ol>
-                            <li>Define Objectives</li>
-                            <li>Assess Data Sources</li>
-                            <li>Choose the Right Tools</li>
-                            <li>Data Preparation</li>
-                            <li>Build Dashboards and Reports</li>
-                            <li>Training and Adoption</li>
-                        </ol>
-                    </p>
-                </section>
-            </div>
+    <!-- Split Container for About, Services, and Additional sections -->
+    <div class="split-container clearfix">
+        <!-- Container for About section -->
+        <div class="section" id="about">
+            <h2>How to Implement Business Intelligence (BI)?</h2>
+            <p>
+                Implementing BI in your organization doesn't have to be complicated. Here's how:
+                <ol>
+                    <li>Define Objectives</li>
+                    <li>Assess Data Sources</li>
+                    <li>Choose the Right Tools</li>
+                    <li>Data Preparation</li>
+                    <li>Build Dashboards and Reports</li>
+                    <li>Training and Adoption</li>
+                </ol>
+            </p>
         </div>
-        <div class="section-right">
-            <!-- Container for Services section -->
-            <div class="section-container">
-                <section id="services">
-                    <h2>Why Choose Us for BI Consulting?</h2>
-                    <p>
-                        When it comes to BI consulting, we stand out for the following reasons:
-                        <ul>
-                            <li>Expertise</li>
-                            <li>Customized Solutions</li>
-                            <li>Proven Track Record</li>
-                            <li>Customer-Centric Approach</li>
-                            <li>Continuous Improvement</li>
-                        </ul>
-                        With our BI consulting services, you can unlock the full potential of your data and drive business growth.
-                    </p>
-                </section>
-            </div>
+        
+        <!-- Container for Services section -->
+        <div class="section" id="services">
+            <h2>Why Choose Us for BI Consulting?</h2>
+            <p>
+                When it comes to BI consulting, we stand out for the following reasons:
+                <ul>
+                    <li>Expertise</li>
+                    <li>Customized Solutions</li>
+                    <li>Proven Track Record</li>
+                    <li>Customer-Centric Approach</li>
+                    <li>Continuous Improvement</li>
+                </ul>
+                With our BI consulting services, you can unlock the full potential of your data and drive business growth.
+            </p>
         </div>
-    </div>
 
-    <!-- Container for Additional section 1 -->
-    <div class="section-container">
-        <section id="additional-section-1">
-            <h2>Additional Section 1</h2>
+        <!-- Container for Additional section -->
+        <div class="section" id="additional">
+            <h2>Additional Section</h2>
             <p>This is an additional section to increase page height.</p>
-            <!-- Adding images here -->
-            <div class="image-container">
-                <img src="{{ url_for('static', filename='images/img2.jpg') }}" alt="Image 1" width="750" height="430">
-            </div> 
-        </section>
-    </div>
-    
-    <!-- Container for Additional section 2 -->
-    <div class="section-container">
-        <section id="additional-section-2">
-            <h2>Additional Section 2</h2>
-            <p>This is another additional section to increase page height.</p>
             <!-- Adding images here -->
             <div class="image-container">
                 <img src="{{ url_for('static', filename='images/img1.jpg') }}" alt="Image 1" width="750" height="430">
             </div> 
-        </section>
+        </div>
     </div>
 
     <!-- Add more containers for additional sections if needed -->
