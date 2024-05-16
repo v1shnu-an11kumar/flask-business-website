@@ -96,4 +96,14 @@ footer {
     height: auto; /* Maintain aspect ratio */
 }
 
+/* styles.css */
+.section-container {
+    transition: transform 0.3s ease; /* Smooth transition for the scale effect */
+}
+
+.section-container:hover {
+    transform: scale(1.05); /* Scale up the container slightly on hover */
+}
+
+
 

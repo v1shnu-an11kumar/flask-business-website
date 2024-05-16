@@ -5,7 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BI AI Data Solutions</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <!-- Include Chart.js library -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="{{ url_for('static', filename='js/chart.js') }}"></script>
     <style>
         body {
             background-color: #363632; /* Black background color */
@@ -51,7 +53,7 @@
 </head>
 <body>
     <header>
-        <h1>Data Analytics.ca</h1>
+        <h1>DataSolutionsGroup.ca</h1>
     </header>
     
     <nav>
@@ -63,7 +65,7 @@
         </ul>
     </nav>
     
-    <!-- Container for Home section -->
+    <!-- Container for Home section (First Container)-->
     <div class="section-container">
         <section id="home">
             <h2>Why Business Intelligence (BI)?</h2>
@@ -79,40 +81,73 @@
             
             <!-- Add a canvas element for the line graph -->
             <canvas id="lineChart" width="400" height="150"></canvas>
-
-            <script>
-                // Data for the line graph
-                var data = {
-                    labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun"],
-                    datasets: [{
-                        label: "Number of Users",
-                        data: [100, 150, 200, 180, 220, 250],
-                        borderColor: 'rgba(75, 192, 192, 1)',
-                        borderWidth: 2
-                    }]
-                };
-
-                // Configuration options
-                var options = {
-                    scales: {
-                        y: {
-                            beginAtZero: true
-                        }
-                    }
-                };
-
-                // Create the line graph
-                var ctx = document.getElementById('lineChart').getContext('2d');
-                var lineChart = new Chart(ctx, {
-                    type: 'line',
-                    data: data,
-                    options: options
-                });
-            </script>
         </section>
     </div>
     
-    <!-- Split Container for About, Services, and Additional sections -->
+    <!-- Split Container for About, Services, and Additional sections (Second Container split into three) -->
+    <div class="split-container clearfix">
+        <!-- Container for About section -->
+        <div class="section" id="about">
+            <h2>How to Implement Business Intelligence (BI)?</h2>
+            <p>
+                Implementing BI in your organization doesn't have to be complicated. Here's how:
+                <ol>
+                    <li>Define Objectives</li>
+                    <li>Assess Data Sources</li>
+                    <li>Choose the Right Tools</li>
+                    <li>Data Preparation</li>
+                    <li>Build Dashboards and Reports</li>
+                    <li>Training and Adoption</li>
+                </ol>
+            </p>
+        </div>
+        
+        <!-- Container for Services section -->
+        <div class="section" id="services">
+            <h2>Why Choose Us for BI Consulting?</h2>
+            <p>
+                When it comes to BI consulting, we stand out for the following reasons:
+                <ul>
+                    <li>Expertise</li>
+                    <li>Customized Solutions</li>
+                    <li>Proven Track Record</li>
+                    <li>Customer-Centric Approach</li>
+                    <li>Continuous Improvement</li>
+                </ul>
+                With our BI consulting services, you can unlock the full potential of your data and drive business growth.
+            </p>
+        </div>
+
+        <!-- Container for Additional section -->
+        <div class="section" id="additional">
+            <h2>Additional Section</h2>
+            <p>This is an additional section to increase page height.</p>
+            <!-- Adding images here -->
+            <div class="image-container">
+                <img src="{{ url_for('static', filename='images/img1.jpg') }}" alt="Image 1" width="750" height="430">
+            </div> 
+        </div>
+    </div>
+
+
+    <!-- (Third Container)-->
+    <div class="section-container">
+        <section id="home">
+            <h2>Why Business Intelligence (BI)?</h2>
+            <p>
+                In today's data-driven world, Business Intelligence (BI) is the key to unlocking valuable insights from your data. With BI, you can:
+                <ul>
+                    <li>Gain Insights</li>
+                    <li>Make Informed Decisions</li>
+                    <li>Stay Competitive</li>
+                    <li>Improve Efficiency</li>
+                </ul>
+            </p>
+        </section>
+    </div>
+
+    <!-- (Fourth Container) -->
+    <!--  split into three) -->
     <div class="split-container clearfix">
         <!-- Container for About section -->
         <div class="section" id="about">
@@ -160,7 +195,7 @@
     <!-- Add more containers for additional sections if needed -->
     
     <footer>
-        <p>&copy; 2024 Data Analytics.ca</p>
+        <p>&copy; DataSolutionsGroup.ca</p>
     </footer>
 </body>
 </html>
